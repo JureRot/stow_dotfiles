@@ -1,0 +1,4 @@
+# ignore all nvim plugins (git clones)
+nvim/.config/nvim/pack/plugins/start/*
+!nvim/.config/nvim/pack/plugins/start/*.sh
+
