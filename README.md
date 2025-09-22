@@ -24,4 +24,4 @@ Changing and maintaining them is also easy since editing the symlink will edit t
 - hypr
 - waybar
 - bash (.bashrc, .bash_profile)
-- nvim (requires to git clone all packages using script)
+- nvim (package directories are ignored in git)
