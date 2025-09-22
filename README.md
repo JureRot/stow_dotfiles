@@ -2,14 +2,15 @@
 
 ### Description:
 
-[Stow utility](https://www.gnu.org/software/stow/) is used to manage and sync files by creating symlinks to a single origin directory in home directory. This is achieved by creating a specific file structure from which stow know how to recreate all the symlinks.
+[Stow utility](https://www.gnu.org/software/stow/) is used to manage and sync files by creating symlinks to a single origin directory in home directory.  
+This is achieved by creating a specific file structure from which stow know how to recreate all the symlinks.  
 This enables us to have all the dotfiles in one place which we can backup using version control and have stow recreate all the symlinks all over our system.
 
 
 ### Instruction:
 
-For example to stow a file (for a specific topic) that is normally in `~/.config/folder/file.txt` you would create the following file structure in your home directory `~/stow_dir/topic/.config/folder/file.txt`
-Then using `stow topic` command in `~/stow_dir` a symlink to the `~/stow_dir/topic/.config/folder/` will be created in `~/.config/folder`
+For example to stow a file (for a specific topic) that is normally in `~/.config/folder/file.txt` you would create the following file structure in your home directory `~/stow_dir/topic/.config/folder/file.txt`  
+Then using `stow topic` command in `~/stow_dir` a symlink to the `~/stow_dir/topic/.config/folder/` will be created in `~/.config/folder`.  
 Editing either file (the one in stow_dir or the symlink) will change both of them.
 
 So in this case all you need to do is version control the stow_dir and all you dotfiles will be backedup and in case you need to replace them you can just clone the entire stow_dir and call stow command for each of them (or for all of them using `stow .`)
