@@ -22,3 +22,5 @@ Changing and maintaining them is also easy since editing the symlink will edit t
 - tmux
 - kanata
 - hypr
+- waybar
+- bash (.bashrc, .bash_profile)
