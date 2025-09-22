@@ -1,0 +1,87 @@
+#|
+Simple kanata rebind
+a)
+rebinds capslock key and right control key to rctrl-esc-taphold action
+rctrl-esc-taphold action ouputs left control when held and escape key if pressed (clicked and released without any other key, and held less than 150 miliseconds)
+
+b)
+rebinds altgr (which is right alt in this case) plus s/c/z to š/č/ž
+at the same time it rebinds special simbols that whould otherwise be on altgr + s/c/z (for us international alternative keyboard layout) to b/k/h keys so we dont lose them
+|#
+
+
+;; One defcfg entry may be added, which is used for configuration key-pairs.
+;; These configurations change kanata's behaviour at a more global level than the other configuration entries.
+;; In this case it includes processing unmapped keys and windows altgr fix
+(defcfg
+  #|
+  This configuration will process all keys pressed inside of kanata, even if
+  they are not mapped in defsrc. This is so that certain actions can activate
+  at the right time for certain input sequences. By default, unmapped keys are
+  not processed through kanata due to a Windows issue related to AltGr. If you
+  use AltGr in your keyboard, you will likely want to follow the simple.kbd
+  file while unmapping lctl and ralt from defsrc.
+  |#
+  process-unmapped-keys yes ;; maybe remove this and add all keys that need to be mapped (both shifts and probably something more)
+
+  ;; There is an optional configuration entry for Windows to help mitigate strange
+  ;; behaviour of AltGr if your layout uses that. Uncomment one of the items below
+  ;; to change what kanata does with the key.
+  ;;
+  ;; For more context, see: https://github.com/jtroo/kanata/issues/55.
+  ;;
+  windows-altgr cancel-lctl-press ;; remove the lctl press that comes as a combo with ralt
+  ;; windows-altgr add-lctl-release  ;; add an lctl release when ralt is released
+  ;;
+  ;; NOTE: even with these workarounds, putting lctl+ralt in your defsrc may
+  ;; not work too well with other applications that use WH_KEYBOARD_LL.
+  ;; Known applications with issues: GWSL/VcXsrv
+)
+
+;; Only one defsrc is allowed.
+;;
+;; defsrc defines the keys that will be intercepted by kanata. The order of the
+;; keys matches with deflayer declarations and all deflayer declarations must
+;; have the same number of keys as defsrc. Any keys not listed in defsrc will
+;; be passed straight to the operating system.
+(defsrc
+  lctrl caps ralt b s k c h z
+)
+
+;; The first layer defined is the layer that will be active by default when kanata starts up.
+(deflayer default
+  @lctrl-esc-taphold @lctrl-esc-taphold @altgr-mod b s k c h z
+)
+
+(deflayer altgr
+  _ _ _ @bplus @splus @kplus @cplus @hplus @zplus
+)
+
+
+;; defalias is used to declare a shortcut for a more complicated action to keep
+;; the deflayer declarations clean and aligned. The alignment in deflayers is not
+;; necessary, but is strongly recommended for ease of understanding visually.
+;;
+;; Aliases are referred to by `@<alias_name>`.
+(defalias
+  lctrl-esc-taphold (tap-hold-press 0 150 esc lctrl) ;; this could probably be tap-hold (without -release)
+  altgr-mod (tap-hold-press 0 5000 ralt (layer-toggle altgr))
+  splus(fork
+    (unicode š)
+    (unicode Š) (lsft rsft))
+  bplus(fork
+    (unicode ß)
+    (unicode §) (lsft rsft))
+  cplus(fork
+    (unicode č)
+    (unicode Č) (lsft rsft))
+  kplus(fork
+    (unicode ©)
+    (unicode ¢) (lsft rsft))
+  zplus(fork
+    (unicode ž)
+    (unicode Ž) (lsft rsft))
+  hplus(fork
+    (unicode æ)
+    (unicode Æ) (lsft rsft))
+)

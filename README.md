@@ -19,3 +19,4 @@ Changing and maintaining them is also easy since editing the symlink will edit t
 
 ### Content:
 tmux
+kanata
