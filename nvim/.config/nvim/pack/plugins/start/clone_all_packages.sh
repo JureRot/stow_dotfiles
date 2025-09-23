@@ -10,3 +10,4 @@ git clone https://github.com/nvim-treesitter/nvim-treesitter.git
 git clone https://github.com/nvim-treesitter/nvim-treesitter-context.git
 git clone https://github.com/nvim-lua/plenary.nvim.git
 git clone https://github.com/folke/todo-comments.nvim.git
+git clone https://github.com/nvim-tree/nvim-web-devicons.git
