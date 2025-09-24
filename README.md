@@ -26,3 +26,4 @@ Changing and maintaining them is also easy since editing the symlink will edit t
 - bash (.bashrc, .bash_profile)
 - nvim (package directories are ignored in git)
 - kitty terminal
+- scripts
