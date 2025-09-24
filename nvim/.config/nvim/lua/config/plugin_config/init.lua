@@ -6,7 +6,8 @@ require ("config.plugin_config.treesitter-context")
 require ("config.plugin_config.todo-comments")
 require ("config.plugin_config.harpoon")
 require ("config.plugin_config.marks")
---require ("config.plugin_config.telescope")
+require ("config.plugin_config.telescope")
+--require ("config.plugin_config.undotree") --with persistent history
 --require ("config.plugin_config.gitsigns")
 --require ("config.plugin_config.fugitive") --missing keybinds
 --require ("config.plugin_config.lsp")
