@@ -28,6 +28,9 @@ vim.keymap.set("n", "<leader>e", ':NvimTreeToggle<CR>', opts)
 -- search buffer for visually selected
 vim.keymap.set("v", "<leader>/", 'y/<C-r>"<CR>n', opts)
 
+-- undotree
+vim.keymap.set("n", "<leader>u", ":UndotreeToggle<CR>", opts)
+
 -- dotnet shortcuts
 --vim.keymap.set("n", "<leader>db", ':!dotnet build<CR>', opts)
 --vim.keymap.set("n", "<leader>dr", ':!dotnet run<CR>', opts)

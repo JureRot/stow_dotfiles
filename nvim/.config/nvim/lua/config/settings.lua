@@ -38,3 +38,7 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.opt_local.formatoptions:remove({ 'r', 'o' })
 	end
 })
+
+-- enable persistent history
+vim.opt.undodir = vim.fn.expand("$HOME/.nvimundodir")
+vim.opt.undofile = true
