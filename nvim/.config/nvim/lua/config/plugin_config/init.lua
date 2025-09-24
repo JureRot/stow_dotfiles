@@ -16,6 +16,8 @@ require ("config.plugin_config.undotree")
 
 -- maybe add something for hl indented chunk you are in
 
+-- maybe add something for debugging (but this can be somewhat language and framework specific)
+
 -- use folding
 	-- set foldmethod=indent
 	-- than use za to toggle folds (or zo /zc to open/close) (zf in visual mode creates a manual fold)
