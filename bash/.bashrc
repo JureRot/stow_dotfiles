@@ -7,7 +7,18 @@
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-PS1='[\u@\h \W]\$ '
+
+# add git-prompt script
+source ~/scripts/git-prompt.sh
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWSTASHSTATE=1
+export GIT_PS1_SHOWUNTRACKEDFILES=1
+export GIT_PS1_SHOWUPSTREAM="auto"
+export GIT_PS1_SHOWCONFLICTSTATE="yes"
+export GIT_PS1_SHOWCOLORHINTS=1
+
+#PS1='[\u@\h \W]\$ '
+PS1='[\u@\h \W]$(__git_ps1 " (%s) ")\$ '
 
 # some more aliases
 alias la='ls -la'
