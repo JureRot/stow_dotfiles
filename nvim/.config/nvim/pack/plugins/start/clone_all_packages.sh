@@ -13,3 +13,4 @@ git clone https://github.com/folke/todo-comments.nvim.git
 git clone https://github.com/nvim-tree/nvim-web-devicons.git
 git clone https://github.com/nvim-telescope/telescope.nvim.git
 git clone https://github.com/mbbill/undotree.git
+git clone https://github.com/lewis6991/gitsigns.nvim.git
