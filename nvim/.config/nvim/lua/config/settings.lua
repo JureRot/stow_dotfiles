@@ -11,6 +11,11 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.hlsearch = false
 
+vim.opt.tabstop = 4 -- tabs count for 4 spaces
+--vim.opt.softtabs = 4 -- also for editing operations??
+vim.opt.shiftwidth = 4 -- how big is the indent
+--vim.opt.expandtab = false -- make sure it actually inserts tabs not spaces
+
 vim.opt.cursorline = true
 
 vim.opt.colorcolumn = "80"
