@@ -9,9 +9,9 @@ require ("config.plugin_config.marks")
 require ("config.plugin_config.telescope")
 require ("config.plugin_config.undotree")
 require ("config.plugin_config.gitsigns")
---require ("config.plugin_config.fugitive") --missing keybinds
---require ("config.plugin_config.lsp")
---require ("config.plugin_config.autocmpletion") --nvim-ts-autotag not installed and enabled
+--require ("config.plugin_config.fugitive") --missing keybinds (using terniman for now)
+require ("config.plugin_config.lsp")
+require ("config.plugin_config.autocompletion") --nvim-ts-autotag not installed and enabled
 --(require ("config.plugin_config.illuminate"))
 
 -- maybe add something for hl indented chunk you are in
