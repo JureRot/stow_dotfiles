@@ -21,7 +21,7 @@ export GIT_PS1_SHOWCOLORHINTS=1
 PS1='[\u@\h \W]$(__git_ps1 "(%s) ")\$ '
 
 # some more aliases
-alias la='ls -la'
+alias la='ls -lA'
 alias mv='mv -i'
 alias rm='rm -i'
 
