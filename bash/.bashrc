@@ -29,4 +29,4 @@ alias rm='rm -i'
 #alias nths='ssh -i "~/.ssh/id_ed25519" nt@192.168.1.7'
 
 # latest advent of code
-alias aoc='cd $HOME/Documents/git/adventofcode/2018_take4/'
+alias aoc='cd $HOME/Documents/git/adventofcode/2025/'
