@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup {
-	ensure_installed = { "lua_ls" }
+	ensure_installed = { "lua_ls", "pylsp" }
 }
 
 local on_attach = function(_, _)
@@ -75,3 +75,20 @@ vim.lsp.config('lua_ls', {
   }
 })
 vim.lsp.enable('lua_ls')
+
+-- requires python-lsp-server (installed separately using pipx)
+vim.lsp.config('pylsp', {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    pylsp = {
+      plugins = {
+        pycodestyle = {
+          ignore = {'W391'},
+          maxLineLength = 100
+        }
+      }
+    }
+  }
+})
+vim.lsp.enable('pylsp')

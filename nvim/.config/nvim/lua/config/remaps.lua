@@ -37,3 +37,6 @@ vim.keymap.set("n", "<leader>u", ":UndotreeToggle<CR>", opts)
 
 -- lua shortucts
 vim.keymap.set("n", "<leader>lr", ":!lua %<CR>", opts) -- run current file with lua
+
+-- python shortucts
+vim.keymap.set("n", "<leader>pr", ":!python %<CR>", opts) -- run current file with python
