@@ -31,12 +31,4 @@ vim.keymap.set("v", "<leader>/", 'y/<C-r>"<CR>n', opts)
 -- undotree
 vim.keymap.set("n", "<leader>u", ":UndotreeToggle<CR>", opts)
 
--- dotnet shortcuts
---vim.keymap.set("n", "<leader>db", ':!dotnet build<CR>', opts)
---vim.keymap.set("n", "<leader>dr", ':!dotnet run<CR>', opts)
-
--- lua shortucts
-vim.keymap.set("n", "<leader>lr", ":!lua %<CR>", opts) -- run current file with lua
-
--- python shortucts
-vim.keymap.set("n", "<leader>pr", ":!python %<CR>", opts) -- run current file with python
+-- filetype specific reginds and configs are done in ftplugin directory
