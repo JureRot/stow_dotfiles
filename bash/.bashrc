@@ -29,7 +29,22 @@ alias rm='rm -i'
 #alias nths='ssh -i "~/.ssh/id_ed25519" nt@192.168.1.7'
 
 # latest advent of code
-alias aoc='cd $HOME/Documents/git/adventofcode/2025/'
+alias aoc='cd $HOME/Documents/git/adventofcode/2018_take5/'
 
 # Created by `pipx` on 2025-12-02 20:11:28
 export PATH="$PATH:/home/neumnotele/.local/bin"
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+case ":$PATH:" in
+    *:/home/neumnotele/.juliaup/bin:*)
+        ;;
+
+    *)
+        export PATH=/home/neumnotele/.juliaup/bin${PATH:+:${PATH}}
+        ;;
+esac
+
+# <<< juliaup initialize <<<
