@@ -1,4 +1,6 @@
 local builtin = require('telescope.builtin')
+local actions = require('telescope.actions')
+local action_state = require('telescope.actions.state')
 local opts = {}
 
 function vim.getVisualSelection()
@@ -57,6 +59,35 @@ local changed_on_branch = function(local_opts)
         previewer = previewers.git_file_diff.new(opts), -- doesnt work with this way of finder
     }):find()
   end
+
+-- image extentions
+local image_extentions = { "png", "jpg", "jpeg", "gif" }
+
+-- custom open function to open specific files using esternal tools
+local function open_with_external_tool(prompt_bufnr)
+	local selection = action_state.get_selected_entry()
+	actions.close(prompt_bufnr)
+
+	-- get extention from celected item
+	local extention = selection.value:match("%.([^.]+)$")
+	if extention then
+		extention = extention:lower()
+
+		-- for images to open using nxsiv
+		for _, e in ipairs(image_extentions) do
+			if extention == e then
+				-- run with nsxiv
+				vim.fn.jobstart({ "nsxiv", selection.value })
+				return
+			end
+		end
+
+		-- add for other filetypes (pdf, ...)
+	end
+
+	-- fallback
+	vim.cmd("edit " .. selection.value)
+end
 
 -- find files
 vim.keymap.set('n', '<leader>fg', builtin.find_files, opts)
@@ -123,7 +154,13 @@ require('telescope').setup {
     },
     pickers = {
         find_files = {
-            hidden = true
+            hidden = true,
+			-- overwrite builtin.find_files 
+			attach_mappings = function(_, map)
+				map('i', '<CR>', open_with_external_tool)
+				map('n', '<CR>', open_with_external_tool)
+				return true
+			end
         },
         live_grep = {
             additional_args = function()

@@ -103,7 +103,8 @@ vim.lsp.enable('pylsp')
 -- initialize project by  julia --project=/path/to/my/project -e 'using Pkg; Pkg.instantiate()'
 -- and not installed through mason
 -- requires to activate and init a project (requires Manifest and Project .toml files)
---  julia --project=. -e 'using Pkg; Pkg.activate("."); Pkg.instantiate()'
+--  julia --project=. -e 'using Pkg; Pkg.activate("."); Pkg.instantiate()' (need to run twice) (maybe)
+-- alternative: julia -e 'using Pkg; Pkg.generate("<project_name>"); Pkg.activate("<project_name>"); Pkg.add("Example"); Pkg.instantiate()'
 local root_files = { 'Project.toml', 'JuliaProject.toml' }
 vim.lsp.config('julials', {
 	--cmd = cmd,
