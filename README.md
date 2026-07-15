@@ -16,7 +16,7 @@ Editing either file (the one in stow_dir or the symlink) will change both of the
 
 So in this case all you need to do is version control the stow_dir and all you dotfiles will be backedup and in case you need to replace them you can just clone the entire stow_dir and call stow command for each of them.
 
-Changing and maintaining them is also easy since editing the symlink will edit the original file in sto_dir. All you need to do is to commit the changes in stow_dir to be backed up.
+Changing and maintaining them is also easy since editing the symlink will edit the original file in stow_dir. All you need to do is to commit the changes in stow_dir to be backed up.
 
 ### Content:
 - tmux
