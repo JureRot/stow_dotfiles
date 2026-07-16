@@ -101,9 +101,23 @@ vim.lsp.config("roslyn", {
 	--]]
 })
 
+-- not installed through mason
+-- requires:
+--  julia --project=~/.julia/environments/nvim-lspconfig -e 'using Pkg; Pkg.add("LanguageServer"); Pkg.add("SymbolServer"); Pkg.add("StaticLint")'
+-- OR  julia --project=~/.julia/environments/nvim-lspconfig -e 'using Pkg; Pkg.update()'
+-- initialize project by  julia --project=/path/to/my/project -e 'using Pkg; Pkg.instantiate()'
+-- and not installed through mason
+-- requires to activate and init a project (requires Manifest and Project .toml files)
+--  julia --project=. -e 'using Pkg; Pkg.activate("."); Pkg.instantiate()' (need to run twice) (maybe)
+-- alternative: julia -e 'using Pkg; Pkg.generate("<project_name>"); Pkg.activate("<project_name>"); Pkg.add("Example"); Pkg.instantiate()'
+-- local julia_root_files = { "Project.toml", "JuliaProject.toml" }
+vim.lsp.config("julials", {
+})
+
 vim.lsp.enable({
 	"lua_ls",
 	"pylsp",
+	"julials",
 	--"roslyn_ls", -- handled by roslyn.nvim
 })
 
