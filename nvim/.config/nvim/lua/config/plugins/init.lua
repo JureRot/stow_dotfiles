@@ -30,6 +30,7 @@ vim.pack.add({
 	"https://github.com/rcarriga/nvim-dap-ui",
 	"https://github.com/nvim-neotest/nvim-nio",
 	"https://github.com/thehamsta/nvim-dap-virtual-text",
+	--"https://github.com/jpalardy/vim-slime"
 })
 
 local function packadd(name)
@@ -61,6 +62,7 @@ packadd("nvim-dap")
 packadd("nvim-dap-ui")
 packadd("nvim-nio")
 packadd("nvim-dap-virtual-text")
+--packadd("vim-slime")
 
 -- individual plugin configs
 require("config.plugins.colorscheme")
@@ -73,5 +75,6 @@ require("config.plugins.harpoon")
 require("config.plugins.lsp")
 require("config.plugins.autocomplete")
 require("config.plugins.debugging")
+--require("config.plugins.slime")
 require("config.plugins.marks")
 require("config.plugins.qol")

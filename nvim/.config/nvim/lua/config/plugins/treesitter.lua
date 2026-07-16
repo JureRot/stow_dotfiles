@@ -12,6 +12,8 @@ local setup_treesitter = function()
 		"markdown_inline",
 		"python",
 		"c_sharp",
+		"commonlisp",
+		"julia",
 	}
 
 	local config = require("nvim-treesitter.config")
