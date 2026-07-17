@@ -21,6 +21,7 @@ vim.pack.add({
 	"https://github.com/mason-org/mason.nvim",
 	"https://github.com/Saghen/blink.cmp",
 	"https://github.com/Saghen/blink.lib",
+	--"https://github.com/Saghen/blink.compat",
 	"https://github.com/L3MON4D3/LuaSnip",
 	"https://github.com/seblyng/roslyn.nvim",
 	"https://github.com/windwp/nvim-autopairs",
@@ -31,6 +32,11 @@ vim.pack.add({
 	"https://github.com/nvim-neotest/nvim-nio",
 	"https://github.com/thehamsta/nvim-dap-virtual-text",
 	--"https://github.com/jpalardy/vim-slime"
+	--"https://github.com/monkoose/parsley",
+	--"https://github.com/monkoose/nvlime",
+	--"https://github.com/gpanders/nvim-parinfer",
+	--"https://github.com/hrsh7th/nvim-cmp",
+	--"https://github.com/hrsh7th/cmp-omni",
 })
 
 local function packadd(name)
@@ -53,6 +59,7 @@ packadd("nvim-lspconfig")
 packadd("mason.nvim")
 packadd("blink.cmp")
 packadd("blink.lib")
+packadd("blink.compat")
 packadd("LuaSnip")
 packadd("roslyn.nvim")
 packadd("nvim-autopairs")
@@ -63,6 +70,11 @@ packadd("nvim-dap-ui")
 packadd("nvim-nio")
 packadd("nvim-dap-virtual-text")
 --packadd("vim-slime")
+--packadd("parsley")
+--packadd("nvlime")
+packadd("nvim-parinfer")
+--packadd("nvim-cmp")
+--packadd("cmp-omni")
 
 -- individual plugin configs
 require("config.plugins.colorscheme")
@@ -73,6 +85,7 @@ require("config.plugins.gitsigns")
 require("config.plugins.telescope")
 require("config.plugins.harpoon")
 require("config.plugins.lsp")
+--require("config.plugins.nvlime")
 require("config.plugins.autocomplete")
 require("config.plugins.debugging")
 --require("config.plugins.slime")

@@ -101,6 +101,30 @@ vim.lsp.config("roslyn", {
 	--]]
 })
 
+-- lisp
+--[[
+vim.lsp.config("cl-lsp", {
+	cmd = { "cl-lsp" },
+	filetypes = { "lisp" },
+	root_markers = { ".git", "*.asd", "package.lisp" },
+})
+--]]
+
+-- alive lsp (for common lisp)
+--[[
+vim.lsp.config('alive_lsp', {
+  default_config = {
+    cmd = {
+      "sbcl", "--noinform", "--non-interactive",
+      "--eval", "(ql:quickload :alive-lsp)",
+      "--eval", "(alive-lsp:start)"
+    },
+    filetypes = { "lisp" },
+	root_markers = { ".git", "*.asd", "package.lisp", vim.fn.getcwd() },
+  }
+})
+--]]
+
 -- not installed through mason
 -- requires:
 --  julia --project=~/.julia/environments/nvim-lspconfig -e 'using Pkg; Pkg.add("LanguageServer"); Pkg.add("SymbolServer"); Pkg.add("StaticLint")'
@@ -119,6 +143,8 @@ vim.lsp.enable({
 	"pylsp",
 	"julials",
 	--"roslyn_ls", -- handled by roslyn.nvim
+	--"cl-lsp",
+	--"alive_lsp",
 })
 
 

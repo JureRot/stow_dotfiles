@@ -32,6 +32,7 @@ alias rm='rm -i'
 alias aoc='cd $HOME/Documents/git/adventofcode/2018_take7/'
 
 export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$PATH:$HOME/.roswell/bin"
 
 # Created by `pipx` on 2025-12-02 20:11:28
 export PATH="$PATH:/home/neumnotele/.local/bin"

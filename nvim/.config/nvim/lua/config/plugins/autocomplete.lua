@@ -1,5 +1,6 @@
 -- Blink
 require("blink.cmp").build():pwait()
+--require("blink.compat").setup({})
 require("blink.cmp").setup({
 	keymap = {
 		preset = "none",
@@ -27,3 +28,12 @@ require("blink.cmp").setup({
 		implementation = "prefer_rust",
 	},
 })
+
+--[[
+require('cmp').setup.filetype({"lisp"}, {
+    sources = {
+        { name = "nvlime" },
+        { name = "buffer" }
+    },
+})
+--]]
